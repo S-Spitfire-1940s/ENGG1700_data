@@ -9,9 +9,7 @@ def main():
 
     DataActions.data('/Users/nakiajunior/Downloads/CollatedData.csv', steel, aluminium, acrylic)
     steel.remove_blanks()
-    aluminium.remove_blanks()
-    acrylic.remove_blanks()
-    print(steel.return_values()[0])
 
+    print(steel.return_values())
 
 main()
