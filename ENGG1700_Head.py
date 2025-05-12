@@ -10,6 +10,5 @@ def main():
     DataActions.data('/Users/nakiajunior/Downloads/CollatedData.csv', steel, aluminium, acrylic)
     steel.remove_blanks()
 
-    print(steel.return_values())
-
+    steel.scatter()
 main()
