@@ -1,5 +1,5 @@
 """
-    Classes and function for ENGG1700 data anaylsis
+    Classes and function for ENGG1700 data
 """
 
 import numpy as np
@@ -45,9 +45,35 @@ class Array:
                 x += 1
             else: continue
 
-
     def return_values(self):
         return self.aE, self.aY, self.aU
+
+    def scatter(self):
+        x =  len(self.aE)+1
+        ax = np.arange(1, x, dtype=int)
+        y = len(self.aY)+1
+        ay = np.arange(1, y, dtype=int)
+        z = len(self.aU)+1
+        az = np.arange(1, z, dtype=int)
+
+        plt.scatter(ax, self.aE)
+        plt.ylabel("young's modulus MPa")
+        plt.title("young's modulus scattered")
+        plt.grid(True)
+        plt.show()
+
+        plt.scatter(ay, self.aY)
+        plt.ylabel("Yield Stress MPa")
+        plt.title("Yield Stress")
+        plt.grid(True)
+        plt.show()
+
+        plt.scatter(az, self.aU)
+        plt.ylabel("UTS ")
+        plt.title("Ultimate tensile strength")
+        plt.grid(True)
+        plt.show()
+
 def data(file_path, *material):
     arr = np.loadtxt(file_path, delimiter=',', skiprows=1, dtype=str)
     for i in arr:
